@@ -25,7 +25,7 @@ namespace Microzaym.Data.Repositories
             using (var ctx = new MicrozayimContext())
             {
                 return ctx.Loans
-                    .FirstOrDefault(x => x.Id == id);
+                          .FirstOrDefault(x => x.Id == id);
             }
         }
 
