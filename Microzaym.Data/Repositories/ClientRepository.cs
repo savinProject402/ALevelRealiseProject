@@ -12,12 +12,20 @@ namespace Microzaym.Data.Repositories
     {
         public void CreateLoan(Loan model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                ctx.Loans.Add(model);
+                ctx.SaveChanges();
+            }
         }
 
         public void CreateTransaction(LoanTransaction model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                ctx.LoanTransactions.Add(model);
+                ctx.SaveChanges();
+            }
         }
     }
 }
