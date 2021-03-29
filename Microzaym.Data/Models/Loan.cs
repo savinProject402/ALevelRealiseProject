@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microzaym.Data.Models
 {
-   public class Loans
+   public class Loan
     {
         public int Id { get; set; }
 
@@ -17,5 +17,7 @@ namespace Microzaym.Data.Models
 
         public string CustomerId { get; set; }
         public ApplicationUser User { get; set; }
+
+        public ICollection<LoanTransaction> LoansTransactions { get; set; }
     }
 }

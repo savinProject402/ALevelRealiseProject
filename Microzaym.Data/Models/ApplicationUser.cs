@@ -9,7 +9,7 @@ namespace Microzaym.Data.Models
 {
    public class ApplicationUser : IdentityUser
     {
-        public ICollection<Loans> Loans { get; set; }
-        public ICollection<UsersNetworks> Networks { get; set; }
+        public ICollection<Loan> Loans { get; set; }
+        public ICollection<UsersNetwork> Networks { get; set; }
     }
 }
