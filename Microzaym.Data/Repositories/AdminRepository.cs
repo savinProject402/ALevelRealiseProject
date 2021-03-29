@@ -12,17 +12,32 @@ namespace Microzaym.Data.Repositories
     {
         public IReadOnlyCollection<Loan> GetAll()
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                return ctx.Loans
+                    .AsNoTracking()
+                    .ToList();
+            }
         }
 
         public Loan GetById(int id)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                return ctx.Loans
+                    .FirstOrDefault(x => x.Id == id);
+            }
         }
 
         public void UpdateAdmin(Loan model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                var upAdmin = ctx.Loans.First(x => x.CustomerId == x.CustomerId);
+
+                upAdmin.Status = model.Status;
+                ctx.SaveChanges();
+            }
         }
     }
 }

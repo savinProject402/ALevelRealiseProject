@@ -12,12 +12,23 @@ namespace Microzaym.Data.Repositories
     {
         public void UpdateAmountManager(Loan model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                var upAmount = ctx.Loans.First(x => x.CustomerId == x.CustomerId);
+                upAmount.Amount = model.Amount;
+                ctx.SaveChanges();
+            }
         }
 
         public void UpdateManager(Loan model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new MicrozayimContext())
+            {
+                var upManager = ctx.Loans.First(x => x.CustomerId == x.CustomerId);
+
+                upManager.Status = model.Status;
+                ctx.SaveChanges();
+            }
         }
     }
 }
