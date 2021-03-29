@@ -9,7 +9,7 @@ namespace Microzaym.Data.Contract
 {
    public interface IClientRepository
     {
-        void CreateLoan(Loan model);
-        //void CreateTransaction()
+        void CreateLoan(Loan model); // Client Create Credit 
+        void CreateTransaction(LoanTransaction model); // Client Create Tranzactions for Repayment
     }
 }

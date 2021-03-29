@@ -75,6 +75,9 @@
     <Compile Include="Models\LoanTransaction.cs" />
     <Compile Include="Models\UsersNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdminRepository.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\ManagerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
