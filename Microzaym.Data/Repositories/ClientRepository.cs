@@ -14,6 +14,8 @@ namespace Microzaym.Data.Repositories
         {
             using (var ctx = new MicrozayimContext())
             {
+                model.Status = "Активен";
+                model.CreationDate = DateTime.Now;
                 ctx.Loans.Add(model);
                 ctx.SaveChanges();
             }

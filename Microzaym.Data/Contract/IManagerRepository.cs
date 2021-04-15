@@ -10,6 +10,6 @@ namespace Microzaym.Data.Contract
    public interface IManagerRepository
     {
         void UpdateManager(Loan model);         //Update Status Accepted by Manader
-        void UpdateAmountManager(Loan model);   //Update Status Closed by Manader
+        void UpdateAmountManager(Loan model);   //Update Status Closed by Manader  //Списан
     }
 }
