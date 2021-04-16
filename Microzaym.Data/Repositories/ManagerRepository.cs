@@ -30,5 +30,22 @@ namespace Microzaym.Data.Repositories
                 ctx.SaveChanges();
             }
         }
+        //public void UpdateAmountManagers()
+        //{
+        //    using (var ctx = new MicrozayimContext())
+        //    {
+        //        var up = ctx.LoanTransactions.FirstOrDefault(x => x.LoansId == x.Loan.Id);
+        //        up.Amount = up.Amount - up.Loan.Amount;
+        //        if (up.Amount <= 0)
+        //        {
+        //            up.Loan.Status = "Закрыт";
+        //        }
+        //        ctx.SaveChanges();
+
+        //        //var users = ctx.LoanTransactions
+        //        //                .Include("Loans")  // подгружаем данные по компаниям
+        //        //                .ToList();
+        //    }
+        //}
     }
 }

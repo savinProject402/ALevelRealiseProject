@@ -11,5 +11,6 @@ namespace Microzaym.Data.Contract
     {
         void UpdateManager(Loan model);         //Update Status Accepted by Manader
         void UpdateAmountManager(Loan model);   //Update Status Closed by Manader  //Списан
+        //void UpdateAmountManagers();
     }
 }

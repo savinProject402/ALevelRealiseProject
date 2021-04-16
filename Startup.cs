@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using ALevelRealiseProject.Jobs;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(ALevelRealiseProject.Startup))]
@@ -9,6 +10,8 @@ namespace ALevelRealiseProject
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //var job = new CloseOrUpdateLoans();
+            //job.UpdateLoansAfterTranzaction();
         }
     }
 }

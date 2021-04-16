@@ -24,6 +24,16 @@ namespace ALevelRealiseProject.App_Start
                 cfg.CreateMap<Loan, LoanPostModel>(MemberList.Destination);
                 cfg.CreateMap<LoanPostModel, Loan>(MemberList.Destination);
 
+
+                cfg.CreateMap<LoanTransactionPostModel, LoanTransactionModel>(MemberList.Destination);
+                cfg.CreateMap<LoanTransactionModel, LoanTransactionPostModel>(MemberList.Destination);
+                cfg.CreateMap<LoanTransaction, LoanTransactionPostModel>(MemberList.Destination);
+                cfg.CreateMap<LoanTransactionModel, LoanTransaction>(MemberList.Destination);
+                cfg.CreateMap<LoanTransaction, LoanTransactionModel>(MemberList.Destination);
+                cfg.CreateMap<LoanTransaction, LoanTransactionPostModel>(MemberList.Destination);
+                cfg.CreateMap<LoanTransactionPostModel, LoanTransaction>(MemberList.Destination);
+
+
             }));
             builder.Register(c =>
             {

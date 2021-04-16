@@ -16,11 +16,13 @@ namespace ALevelRealiseProject.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ILoanServices _loanServices ;
+        private readonly ILoanTransactionServices _loanTransactionServices;
 
-        public LoansController(ILoanServices loanServices, IMapper mapper)
+        public LoansController(ILoanServices loanServices, IMapper mapper, ILoanTransactionServices loanTransactionServices)
         {
             _loanServices = loanServices;
             _mapper = mapper;
+            _loanTransactionServices = loanTransactionServices;
         }
 
         [Authorize]
@@ -36,7 +38,7 @@ namespace ALevelRealiseProject.Controllers
             return new EmptyResult();
         }
 
-
+       
 
 
 

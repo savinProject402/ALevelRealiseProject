@@ -1,0 +1,17 @@
+﻿@model ALevelRealiseProject.Models.LoanTransactionPostModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>CreateTransaction</h2>
+
+@using (Html.BeginForm("Create", "LoanTransaction", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount)
+    <br />
+    @Html.LabelFor(x => x.LoansId )
+    @Html.TextBoxFor(x => x.LoansId)
+    <br />
+    <input type="submit" value="Внести" />
+}

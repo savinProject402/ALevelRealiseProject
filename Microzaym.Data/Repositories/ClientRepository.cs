@@ -10,6 +10,13 @@ namespace Microzaym.Data.Repositories
 {
     public class ClientRepository : IClientRepository
     {
+        private readonly IManagerRepository _managerRepository;
+
+        public ClientRepository(IManagerRepository managerRepository)
+        {
+            _managerRepository = managerRepository;
+        }
+
         public void CreateLoan(Loan model)
         {
             using (var ctx = new MicrozayimContext())
@@ -25,9 +32,12 @@ namespace Microzaym.Data.Repositories
         {
             using (var ctx = new MicrozayimContext())
             {
+                model.CreationDate = DateTime.Now;
+                model.Status = 0;
                 ctx.LoanTransactions.Add(model);
                 ctx.SaveChanges();
             }
+            //_managerRepository.UpdateAmountManagers();
         }
     }
 }
