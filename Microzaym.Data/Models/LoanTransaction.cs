@@ -16,7 +16,7 @@ namespace Microzaym.Data.Models
         public int Amount { get; set; }
 
         public int LoansId { get; set; }
-        public Loan Loan { get; set; }
+        public Loan Loans { get; set; }
 
     }
 }

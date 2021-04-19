@@ -27,8 +27,8 @@ namespace Microzaym.Data
                         .HasForeignKey(x => x.CustomerId);
 
             modelBuilder.Entity<LoanTransaction>()
-                        .HasRequired(x => x.Loan)
-                        .WithMany(x => x.LoansTransactions)
+                        .HasRequired(x => x.Loans)
+                        .WithMany(x => x.LoanTransactions)
                         .HasForeignKey(x => x.LoansId)
                         .WillCascadeOnDelete(false);
 

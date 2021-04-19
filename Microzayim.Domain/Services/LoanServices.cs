@@ -32,14 +32,17 @@ namespace Microzayim.Domain.Services
         public void CreateLoan(LoanModel model) 
         {
             var createLoan = _mapper.Map<Loan>(model);
+            model.Status = "Active";
+            model.CreationDate = DateTime.Now;
+
+
             var custLoans = _adminRepository.GetAll()
-                .Where(x => model.Status == "Активен").Where(y => y.CustomerId == model.CustomerId);
+                .Where(x => model.Status == "Активен" && x.CustomerId == model.CustomerId);
 
             if (custLoans.Count() > 2)
             {
                 throw new Exception("Brother you have MAX Count Loans");
             }
-
 
             _clientRepository.CreateLoan(createLoan);
         }

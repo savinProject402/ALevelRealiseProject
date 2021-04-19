@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,6 @@ namespace Microzaym.Data.Models
 
         public string CustomerId { get; set; }
         public ApplicationUser User { get; set; }
-
-        public ICollection<LoanTransaction> LoansTransactions { get; set; }
+        public ICollection<LoanTransaction> LoanTransactions { get; set; }
     }
 }

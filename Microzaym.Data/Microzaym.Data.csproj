@@ -60,10 +60,6 @@
     <Compile Include="Contract\IClientRepository.cs" />
     <Compile Include="Contract\IManagerRepository.cs" />
     <Compile Include="MicrozayimContext.cs" />
-    <Compile Include="Migrations\202103282349161_Create.cs" />
-    <Compile Include="Migrations\202103282349161_Create.designer.cs">
-      <DependentUpon>202103282349161_Create.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202103290203595_Tranz.cs" />
     <Compile Include="Migrations\202103290203595_Tranz.designer.cs">
       <DependentUpon>202103290203595_Tranz.cs</DependentUpon>
@@ -71,6 +67,14 @@
     <Compile Include="Migrations\202104160302536_TranzStatus.cs" />
     <Compile Include="Migrations\202104160302536_TranzStatus.Designer.cs">
       <DependentUpon>202104160302536_TranzStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104182314417_Run.cs" />
+    <Compile Include="Migrations\202104182314417_Run.Designer.cs">
+      <DependentUpon>202104182314417_Run.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104190051420_Real.cs" />
+    <Compile Include="Migrations\202104190051420_Real.Designer.cs">
+      <DependentUpon>202104190051420_Real.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -87,14 +91,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103282349161_Create.resx">
-      <DependentUpon>202103282349161_Create.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103290203595_Tranz.resx">
       <DependentUpon>202103290203595_Tranz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104160302536_TranzStatus.resx">
       <DependentUpon>202104160302536_TranzStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104182314417_Run.resx">
+      <DependentUpon>202104182314417_Run.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104190051420_Real.resx">
+      <DependentUpon>202104190051420_Real.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

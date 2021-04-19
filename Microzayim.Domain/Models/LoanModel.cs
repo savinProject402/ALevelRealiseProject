@@ -13,5 +13,6 @@ namespace Microzayim.Domain.Models
         public string Status { get; set; }
         public int Amount { get; set; }
         public string CustomerId { get; set; }
+
     }
 }
