@@ -11,6 +11,5 @@ namespace ALevelRealiseProject.Models
         public int Amount { get; set; }
 
         public int LoansId { get; set; }
-        public Loan Loan { get; set; }
     }
 }

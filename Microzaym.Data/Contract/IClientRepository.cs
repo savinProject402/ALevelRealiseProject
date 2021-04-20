@@ -11,5 +11,7 @@ namespace Microzaym.Data.Contract
     {
         void CreateLoan(Loan model); // Client Create Credit 
         void CreateTransaction(LoanTransaction model); // Client Create Tranzactions for Repayment
+        Loan GetById(int id);
+        LoanTransaction GetByIdTr(int id);
     }
 }

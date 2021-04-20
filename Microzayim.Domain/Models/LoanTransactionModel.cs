@@ -13,5 +13,7 @@ namespace Microzayim.Domain.Models
         public int Amount { get; set; }
         public int Status { get; set; }
         public int LoansId { get; set; }
+        public LoanModel Loans { get; set; }
+
     }
 }

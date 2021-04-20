@@ -33,6 +33,8 @@ namespace ALevelRealiseProject.Controllers
             var userId = identuty.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
             var createModel = _mapper.Map<LoanModel>(model);
             createModel.CustomerId = userId;
+            createModel.Status = "Active";
+            createModel.CreationDate = DateTime.Now;
             _loanServices.CreateLoan(createModel);
 
             return new EmptyResult();

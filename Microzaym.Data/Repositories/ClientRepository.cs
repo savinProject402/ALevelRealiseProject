@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Microzaym.Data.Repositories
 {
@@ -27,14 +28,30 @@ namespace Microzaym.Data.Repositories
                 ctx.SaveChanges();
             }
         }
+        public Loan GetById(int id)
+        {
+            using (var ctx = new MicrozayimContext())
+            {
+                return ctx.Loans.Include(x => x.LoanTransactions)
+                          .FirstOrDefault(x => x.Id == id);
+            }
+        }
+        public LoanTransaction GetByIdTr(int id)
+        {
+            using (var ctx = new MicrozayimContext())
+            {
+                return ctx.LoanTransactions
+                          .FirstOrDefault(x => x.LoansId == id);
+            }
+        }
 
         public void CreateTransaction(LoanTransaction model)
         {
             using (var ctx = new MicrozayimContext())
             {
-                model.CreationDate = DateTime.Now;
-                model.Status = 0;
-                model.Loans = _adminRepository.GetById(model.LoansId);
+               
+                //model.Loans = _adminRepository.GetById(model.LoansId);
+
                 ctx.LoanTransactions.Add(model);
                 ctx.SaveChanges();
             }

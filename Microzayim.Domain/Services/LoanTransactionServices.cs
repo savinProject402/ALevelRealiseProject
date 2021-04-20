@@ -25,17 +25,17 @@ namespace Microzayim.Domain.Services
         }
         public void CreateTransaction(LoanTransactionModel model)
         {
+            model.CreationDate = DateTime.Now;
+            model.Status = 0;
+
             var createTransaction = _mapper.Map<LoanTransaction>(model);
-
-
             _clientRepository.CreateTransaction(createTransaction);
 
-            var loan = _adminRepository.GetById(createTransaction.LoansId);
-            loan.LoanTransactions = createTransaction.Loans.LoanTransactions;
-            //loan.LoansTransactions.Where(i => i.Status == 0).Sum(i => i.Amount);
+
+            var loan = _clientRepository.GetById(createTransaction.LoansId);
 
 
-            if (loan.LoanTransactions.Sum(x => x.Amount) >= createTransaction.Amount)
+            if (loan.LoanTransactions.Sum(x => x.Amount) >= loan.Amount)
             {
                 loan.Status = "Close";
                 _adminRepository.UpdateAdmin(loan);

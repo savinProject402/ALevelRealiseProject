@@ -3,6 +3,7 @@ using AutoMapper;
 using Microzayim.Domain;
 using Microzayim.Domain.Contracts;
 using Microzayim.Domain.Models;
+using Microzaym.Data.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,10 +28,11 @@ namespace ALevelRealiseProject.Controllers
         [HttpPost]
         public ActionResult Create(LoanTransactionPostModel model)
         {
+            
             var createtransactionModel = _mapper.Map<LoanTransactionModel>(model);
             _loanTransactionServices.CreateTransaction(createtransactionModel);
 
-            return new EmptyResult();
+            return View();
         }
 
 
